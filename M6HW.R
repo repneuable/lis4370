@@ -10,7 +10,7 @@
 # Create your first basic graphic in R as I outlined in 
 # the video and power point
 
-# I chose this topic becuase of three reasons 
+# I chose this topic because of three reasons:
 #   (1) I already have extensive domain knowledge
 #     of the data and have never used R to analyze it
 #   (2) the assignment directions seemed flexible 
