@@ -85,12 +85,22 @@ ctpe_a <- ctpe[ctpe$status=="active",]
 ctpe_a <- ctpe_a %>%
   filter(paid!=0)
 
+#Make averages for plotting
+#Orgininally intended to have a geom_line but never used
+ctpe_avg <- ctpe_a %>%
+  group_by(weekday) %>%
+  summarize(paid_sum  = sum(paid))
+ctpe_avg_value <- mean(ctpe_avg$paid_sum)
+
 #Visualize
 ggplot(ctpe_a, aes(x=weekday, y=paid, fill=cat)) + 
   geom_bar(stat="identity") + 
-  #  theme_tufte() +
   theme_calc() +  
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
   scale_fill_brewer(palette="Set1") +
   labs(title = "Total Payments by Day of the Week (April 2019 - January 2020)", 
-       x = "Weekday", y = "Total Dollar Amount Paid", fill = "Course Category")
+       x = "Weekday", y = "Total Dollar Amount Paid", fill = "Course Category") +
+  geom_hline(yintercept=ctpe_avg_value, linetype="dashed") + 
+  annotate("text", ctpe_avg$weekday[7], ctpe_avg_value, vjust = -1, 
+           label = "Average")
+  
