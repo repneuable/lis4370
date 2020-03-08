@@ -1,0 +1,15 @@
+"Name" "Age" "Sex" "Grade" "Grade.Average" "Gender.ID"
+"1" "Lauri" 21 "Female" 90 86.9375 2
+"2" "Leonie" 21 "Female" 91 86.9375 2
+"4" "Mikaela" 20 "Female" 69 86.9375 1
+"5" "Aiko" 24 "Female" 97 86.9375 1
+"6" "Tiffaney" 21 "Female" 78 86.9375 1
+"7" "Corina" 23 "Female" 81 86.9375 2
+"8" "Petronila" 23 "Female" 98 86.9375 1
+"9" "Alecia" 20 "Female" 87 86.9375 1
+"10" "Shemika" 23 "Female" 97 86.9375 1
+"12" "Deloris" 21 "Female" 67 86.9375 1
+"14" "Eboni" 20 "Female" 84 86.9375 1
+"15" "Delfina" 19 "Female" 93 86.9375 1
+"16" "Ernestina" 19 "Female" 93 86.9375 1
+"20" "Milo" 19 "Male" 67 80.25 2
