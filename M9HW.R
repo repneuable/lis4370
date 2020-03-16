@@ -10,6 +10,7 @@
 # Import packages
 library(ggplot2)
 library(lattice)
+library(hexbin)
 
 # Import data
 # Credit: https://vincentarelbundock.github.io/Rdatasets/datasets.html
