@@ -1,47 +1,68 @@
 ############################################################################
-# ------ ------ ----- MOD11: Minard and Tufte Work in R ----- ------ ------ 
+# ------ ------ ------ ------  MOD11: Debugging ------ ------ ------ ------
 ############################################################################
 #' ---
-#' title:   "MOD11: Minard and Tufte Work in R"
+#' title:   "MOD11: Debugging"
 #' author:  "Kevin Hitt"
-#' date:    "Due: April 6th, 2020"
+#' date:    "Due: April 6, 2020"
 #' ---
-#' 
 
-# Load packages
-library(ggplot2)
-library(ggthemes)
-library(devtools)
-library(epanetReader)
-library(reshape)
-library(RCurl)
-source_url("https://raw.githubusercontent.com/sjmurdoch/fancyaxis/master/fancyaxis.R")
+#The code below contains a 'deliberate' bug!  
 
-# Plots derived from: http://motioninsocial.com/tufte/#introduction
+tukey_multiple <- function(x) {
+  outliers <- array(TRUE, dim = dim(x))
+  for (j in 1:ncol(x))
+  {
+    outliers[, j] <- outliers[, j] && tukey.outlier(x[, j])
+  }
+  outlier.vec <- vector(length = nrow(x))
+  for (i in 1:nrow(x))
+  {
+    outlier.vec[i] <- all(outliers[i, ])
+  } 
+  return(outlier.vec)
+}
 
-# i. Marginal histogram scatter plot (base graphics with fancyaxis)
-#     uses 'source_url' as defined with packages
+#Find the bug and fix it.
+# -- Step 1: Execute user function with test vector v <- c(2, 3, 4, 6, 843)
+#             Error in array(TRUE, dim = dim(x)) : 'dims' cannot be of length 0
+#
+# -- Step 2: Execute debug() function line by line
+#             debug at #2: outliers <- array(TRUE, dim = dim(x))
+#             
+# -- Step 3: Execute user function with test matrix  m <- matrix(c(1,4,8,1483), nrow=2, ncol=2)
+#             Error in tukey.outlier(x[, j]) : 
+#             could not find function "tukey.outlier"
+#
+#             Here, I can see that the first error presented has been resolved by
+#             using the correct input type, multi-dimensional. I can be concluded
+#             that while the function returns a vector, the function input is meant 
+#             to be matrices and dataframes rather than vectors. 
 
-x <- faithful$waiting
-y <- faithful$eruptions
-plot(x, y, main="", axes=FALSE, pch=16, cex=0.8,
-     xlab="Time till next eruption (min)", ylab="Duration (sec)", 
-     xlim=c(min(x)/1.1, max(x)), ylim=c(min(y)/1.5, max(y)))
-axis(1, tick=F)
-axis(2, tick=F, las=2)
-axisstripchart(faithful$waiting, 1)
-axisstripchart(faithful$eruptions, 2)
+# Correct user function by removing unknown function call (tukey.outlier)
+# While some resources on the web indicate this function call is valid in 
+# some spaces, it does not provided any benefit to this function:
 
-# ii. Dot-dash plot in ggplot2
+tukey_multiple_corrected <- function(x) {
+  outliers <- array(TRUE, dim = dim(x))
+  for (j in 1:ncol(x))
+  {
+    outliers[, j] <- outliers[, j] && x[, j]
+  }
+  outlier.vec <- vector(length = nrow(x))
+  for (i in 1:nrow(x))
+  {
+    outlier.vec[i] <- all(outliers[i, ])
+  } 
+  return(outlier.vec)
+}
 
-ggplot(mtcars, aes(wt, mpg)) + geom_point() + geom_rug() + theme_tufte(ticks=F) + 
-  xlab("Car weight (lb/1000)") + ylab("Miles per gallon of fuel") + 
-  theme(axis.title.x = element_text(vjust=-0.5), axis.title.y = element_text(vjust=1))
+# Generate random matrix for testing with exponential distribution
+m <- matrix(rexp(200, rate=.01), ncol=10)
 
-# iii. Sparklines in base graphics with plotSparklineTable
+# Test debugged function
+result <- tukey_multiple_corrected(m)
 
-dd <- read.csv(text = getURL("https://gist.githubusercontent.com/GeekOnAcid/da022affd36310c96cd4/raw/9c2ac2b033979fcf14a8d9b2e3e390a4bcc6f0e3/us_nr_of_crimes_1960_2014.csv"))
-d <- melt(dd[,c(2:11)])
-pdf("sparklines_base_epanetReader.pdf", height=6, width=10)
-plotSparklineTable(d, row.var = 'variable', col.vars = 'value')
-dev.off()
+# While it is difficult to see if the function is working properly as intended
+# (All columns appear to contain outlier values), however, it does execute without
+# error now. 
