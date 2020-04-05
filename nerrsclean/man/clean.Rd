@@ -7,15 +7,20 @@
 clean(df, normalize)
 }
 \arguments{
-\item{normalize}{Do you wish to normalize data? Defaults to TRUE}
+\item{df}{Dataframe for manipulation.}
+
+\item{normalize}{TRUE to normalize temperature, salinity, dissolved oxygen mgl, and turbidity. FALSE to do nothing.}
 }
 \description{
 Package to prepare data collected under NOAA's National
 Estuarine Research Reserve System's (NERRS) National Monitoring
-Program for analysis
+Program for analysis. Converts dates to a friendly format, renames
+columns, and normalizes environmental variables from 0 to 1.
 }
 \examples{
-clean()
+df2 <- clean(df, T)
 
 }
+\keyword{NOAA}
+\keyword{data-cleaning}
 \keyword{water}
