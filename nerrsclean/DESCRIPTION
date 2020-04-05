@@ -2,14 +2,14 @@ Package: nerrsclean
 Type: Package
 Title: National Estuarine Research Reserve System Data Cleaning
 Version: 0.1.0
-Author: Kevin Hitt
-Maintainer: <kevin@hitt.work>
+Author: "Kevin Hitt <kevin@hitt.work> [aut, cre]"
 Description: Package for easily cleaning data collected under NOAA's National 
     Estuarine Research Reserve System's (NERRS) National Monitoring Program.
     Data from http://cdmo.baruch.sc.edu/dges/
-Imports:
+Depends:
+    R (>= 3.1.2),
     scales
-License: GNU
+License: CC0
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0.9000
