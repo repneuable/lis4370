@@ -17,5 +17,4 @@ Toolset for environmental scientists to clean and perform exploratory analysis o
     _note for improvement_: add error message that API key must be configured in ggmap
  
  
-![Image of load_wqp() function in wqpcleanr package]
-(https://octodex.github.com/images/yaktocat.png)
+![Image of load_wqp() function in wqpcleanr package] (https://octodex.github.com/images/yaktocat.png)
