@@ -5,7 +5,7 @@
 #' @return A dataframe from WQP with custom named columns.
 #' @export
 #' @examples
-#' my_data <- loadwqp("12-31-2015","12-31-2020")
+#' my_data <- load_wqp("12-31-2015","12-31-2020")
 load_wqp <- function(start_date, end_date) {
 
   url_head <- c("https://www.waterqualitydata.us/data/Station/search?statecode=US%3A12&countycode=US%3A12%3A057&startDateLo=")
