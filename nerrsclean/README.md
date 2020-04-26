@@ -9,4 +9,4 @@ The function returns a cleaned dataframe.
 
 The data sets appropriate for this tool can be found here: http://cdmo.baruch.sc.edu/dges/
 
-The purpose of this package is to serve as a preliminary data cleaning tool for any of the .CSV files downloadble from the above site.
+The purpose of this package is to serve as a preliminary data cleaning tool for any of the .CSV files downloadable from the above site.
