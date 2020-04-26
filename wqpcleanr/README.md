@@ -4,6 +4,7 @@ Toolset for environmental scientists to clean and perform exploratory analysis o
 
 
 ```
+library(devtools)
 install_github("repneuable/lis4370/wqpcleanr")
 library(wqpcleanr)
 ```
