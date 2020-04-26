@@ -14,7 +14,7 @@ load_wqp <- function(start_date, end_date) {
   end <- c("04-23-2020")
   url_tail <- c("&providers=NWIS&mimeType=csv")
 
-  url <- paste(url_head, start, url_mid, end, url_tail)
+  url <- paste(url_head, start, url_mid, end, url_tail, sep = "")
 
   wqp <- read.csv(url)
 
