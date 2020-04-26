@@ -22,14 +22,14 @@ The data is loaded dynamically by URL from the US Environmental Protection Agenc
 2. __Get prelimary view of data__
 
     * load_wqp() - loads data with parameters "start_date" and "end_date" via URL
-  
-    * preview_locations() - uses ggmap() to show plot of geographic sampling distribution
     
     * preview_na() - lists the number and percentages of NA values for all variables
     
     * preview_uniques() - lists unique values for each column
     
 3. __Overview of data latitude and longitude__
+    
+    * preview_locations() - uses ggmap() to show plot of geographic sampling distribution
     
     * _note for improvement_: add error message that API key must be configured in ggmap
  
