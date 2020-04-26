@@ -33,6 +33,7 @@ The data is loaded dynamically by URL from the US Environmental Protection Agenc
     
     * _note for improvement_: add error message that API key must be configured in ggmap
  
+Full overview provided here: https://r.hitt.cc/final
  
 ## Function previews:
 
