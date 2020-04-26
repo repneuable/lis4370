@@ -2,6 +2,12 @@
 
 Toolset for environmental scientists to clean and perform exploratory analysis on EPA Water Quality Portal data. 
 
+
+```
+install_github("repneuable/lis4370/wqpcleanr")
+library(wqpcleanr)
+```
+
 ## Package objectives:
 
 1. __Load data by date (in "04-23-2020" format)__
