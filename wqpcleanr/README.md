@@ -16,5 +16,21 @@ Toolset for environmental scientists to clean and perform exploratory analysis o
 3. __Overview of data latitude and longitude__
     _note for improvement_: add error message that API key must be configured in ggmap
  
- 
-![Image of load_wqp() function in wqpcleanr package](https://octodex.github.com/images/yaktocat.png)
+#### load_wqp() 
+![Image of load_wqp() function in wqpcleanr package](https://github.com/repneuable/lis4370/blob/master/wqpcleanr/images/wqpcleanr-load.png)
+
+#### preview_locations()
+![Image of preview_locations() function in wqpcleanr package(https://github.com/repneuable/lis4370/blob/master/wqpcleanr/images/wqpcleanr-location.png)
+
+#### preview_locations() plot
+![Image of preview_locations() plot in wqpcleanr package](https://github.com/repneuable/lis4370/blob/master/wqpcleanr/images/wqpcleanr-location_plot.png)
+
+#### preview_na()
+![Image of preview_na() function in wqpcleanr package](https://github.com/repneuable/lis4370/blob/master/wqpcleanr/images/wqpcleanr-na.png)
+
+#### preview_uniques()
+![Image of preview_uniques() function in wqpcleanr package](https://github.com/repneuable/lis4370/blob/master/wqpcleanr/images/wqpcleanr-uniques_1.png)
+![Image of preview_uniques() function in wqpcleanr package](https://github.com/repneuable/lis4370/blob/master/wqpcleanr/images/wqpcleanr-uniques_2.png)
+![Image of preview_uniques() function in wqpcleanr package](https://github.com/repneuable/lis4370/blob/master/wqpcleanr/images/wqpcleanr-uniques_3.png)
+![Image of preview_uniques() function in wqpcleanr package](https://github.com/repneuable/lis4370/blob/master/wqpcleanr/images/wqpcleanr-uniques_4.png)
+![Image of preview_uniques() function in wqpcleanr package](https://github.com/repneuable/lis4370/blob/master/wqpcleanr/images/wqpcleanr-uniques_5.png)
