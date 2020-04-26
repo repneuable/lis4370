@@ -9,6 +9,10 @@ install_github("repneuable/lis4370/wqpcleanr")
 library(wqpcleanr)
 ```
 
+## Data source
+
+The data is loaded dynamically by URL from the US Environmental Protection Agency (EPA), US Geological Survey (USGS), and the National Water Quality Monitoring Council (NWQMC) portal that integrates publicly available water quality data from the USGS National Water Information System (NWIS) the EPA STOrage and RETrieval (STORET) Data Warehouse, and the USDA ARS Sustaining The Earth’s Watersheds - Agricultural Research Database System (STEWARDS) found here: https://www.waterqualitydata.us/portal/
+
 ## Package objectives:
 
 1. __Load data by date (in "04-23-2020" format)__
