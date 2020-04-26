@@ -70,15 +70,21 @@ library(ggmap)
 #
 # Currently, data is specific to Hillsborough County, Florida
 wqp <- load_wqp("12-31-2015","12-31-2020")
+
 # Inspect loaded data
 str(wqp)
+
 # Preview where NA values exist
 preview_na(wqp)
+
 # Preview unique values for each column
 preview_uniques(wqp)
+
 # Preview where locations of sampling sites are
 # This requires the ggmap() package as well as a preconfigured Google Maps API key
 # Please see: https://cran.r-project.org/web/packages/ggmap/readme/README.html for
 # more information on the Google API key to properly generate the map
 preview_locations(wqp)
+
 ```
+
