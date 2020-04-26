@@ -1,0 +1,84 @@
+---
+title: "wqpcleanr Vignette"
+author: "Kevin Hitt"
+date: "2020-04-25"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(wqpcleanr)
+library(ggplot2)
+library(ggmap)
+```
+
+```{r}
+# Load data from WQP portal -----------------------------------------------
+#
+# Please provide 1 start date and 1 end date for the search parameters.
+#
+# The data import is handled automatically by the package via direct URL download.
+#
+# Column names are automatically assigned as:
+#                 org_id
+#                 org_name
+#                 monitor_id
+#                 monitor_name
+#                 monitor_type
+#                 monitor_descrip
+#                 light_code
+#                 drainage_area
+#                 drainage_area_unit
+#                 cont_drainage_area
+#                 cont_drainage_unit
+#                 lat
+#                 lon
+#                 map_scale
+#                 horiz_acc
+#                 horiz_acc_unit
+#                 horiz_source
+#                 horiz_datum
+#                 vert_measure
+#                 vert_measure_unit
+#                 vert_acc
+#                 vert_acc_unit
+#                 vert_source
+#                 vert_datum
+#                 country_id
+#                 state_id
+#                 county_id
+#                 aquifer
+#                 aquifer_formation
+#                 aquifer_type
+#                 construction_date
+#                 well_depth
+#                 well_depth_unit
+#                 wellhole_depth
+#                 wellhole_depth_unit
+#                 provider
+#
+#
+# Currently, data is specific to Hillsborough County, Florida
+wqp <- load_wqp("12-31-2015","12-31-2020")
+# Inspect loaded data
+str(wqp)
+# Preview where NA values exist
+preview_na(wqp)
+# Preview unique values for each column
+preview_uniques(wqp)
+# Preview where locations of sampling sites are
+# This requires the ggmap() package as well as a preconfigured Google Maps API key
+# Please see: https://cran.r-project.org/web/packages/ggmap/readme/README.html for
+# more information on the Google API key to properly generate the map
+preview_locations(wqp)
+```
