@@ -31,7 +31,7 @@ Toolset for environmental scientists to clean and perform exploratory analysis o
 
 ### preview_locations()
 
-![Image of preview_locations() function in wqpcleanr package(https://github.com/repneuable/lis4370/blob/master/wqpcleanr/images/wqpcleanr-location.png)
+![Image of preview_locations() function in wqpcleanr package](https://github.com/repneuable/lis4370/blob/master/wqpcleanr/images/wqpcleanr-location.png)
 
 ### preview_locations() plot
 
