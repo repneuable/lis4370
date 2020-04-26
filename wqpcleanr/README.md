@@ -23,6 +23,10 @@ The data is loaded dynamically by URL from the US Environmental Protection Agenc
 
     * load_wqp() - loads data with parameters "start_date" and "end_date" via URL
     
+        * if errors are received here, first try setting the start date to a year earlier than 2012
+    
+        * if problems persist, feel free to contact me at https://www.hitt.work
+    
     * preview_na() - lists the number and percentages of NA values for all variables
     
     * preview_uniques() - lists unique values for each column
