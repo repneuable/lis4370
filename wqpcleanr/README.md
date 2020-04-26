@@ -13,7 +13,9 @@ Toolset for environmental scientists to clean and perform exploratory analysis o
     preview_na() - lists the number and percentages of NA values for all variables
     preview_uniques() - lists unique values for each column
     
-3. __Overview of data laitudet and longitude__
+3. __Overview of data latitude and longitude__
     _note for improvement_: add error message that API key must be configured in ggmap
  
  
+![Image of load_wqp() function in wqpcleanr package]
+(https://octodex.github.com/images/yaktocat.png)
