@@ -1,3 +1,4 @@
 # lis4370
-R Programming repository
-This is a commment from RStudio
+LIS 4370 - R Programming code repository
+Spring 2020
+See site here: https://viz.hitt.cc/listings
